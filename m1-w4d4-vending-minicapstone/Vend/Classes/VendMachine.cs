@@ -14,9 +14,9 @@ namespace Vend.Classes
         Change changeBalance = new Change();
         public double balance = 0.00;
 
-        public double getBalance()
+        public double getBalance
         {
-            return balance;
+            get { return balance; }
         }
 
 
@@ -27,7 +27,7 @@ namespace Vend.Classes
             try { 
 
             tempBalance = double.Parse(Console.ReadLine());
-                balance += tempBalance;
+            balance += tempBalance;
 
             }
             catch
