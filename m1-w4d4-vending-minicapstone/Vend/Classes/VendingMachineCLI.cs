@@ -26,11 +26,11 @@ namespace Vend.Classes
 
             {
 
-                Console.WriteLine($"********* PLEASE MAKE A SELECTION *********\n");
+                Console.WriteLine($"********* MAIN MENU *********\n");
                 Console.WriteLine("1) Display Vending Machine Items");
                 Console.WriteLine("2) Purchase");
                 Console.WriteLine("\n9) Exit Menu");
-                Console.Write($"\nPlease enter either a 1 or 2: ");
+                Console.Write($"\nPlease enter either a 1, 2, or 9: ");
 
                 Int16 tempInput;
                 int userInput = 0;
