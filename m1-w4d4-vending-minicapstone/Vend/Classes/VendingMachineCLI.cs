@@ -8,8 +8,13 @@ using System.Runtime.InteropServices;
 
 namespace Vend.Classes
 {
-    public class VendingMachineCLI
-    {
+        public class VendingMachineCLI
+        {
+            private VendMachine vendingMachine = new VendMachine();
+            public VendingMachineCLI(VendMachine vendingMachine)
+            {
+                this.vendingMachine = vendingMachine;
+            }
 
         VendMachine vendMethod = new VendMachine();
         Change balance = new Change();

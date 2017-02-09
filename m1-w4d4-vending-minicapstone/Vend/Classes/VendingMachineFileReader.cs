@@ -21,7 +21,10 @@ namespace Vend.Classes
         {
             //VendingMachineItems vmi = new VendingMachineItems();
             items = readAndLoadFile(filePath, items);
-           
+        }
+        public Dictionary<string, VendingMachineItems> Items
+        {
+            get { return items; }
         }
 
         public Dictionary<string,VendingMachineItems> readAndLoadFile(string filePath, Dictionary<string,VendingMachineItems> items)

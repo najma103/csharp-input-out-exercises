@@ -23,8 +23,7 @@ namespace Vend.Classes
         {
 
         }
-
-        public VendMachine(Dictionary<string,VendingMachineItems> items)
+        public VendMachine(Dictionary<string, VendingMachineItems> items)
         {
             machine = items;
         }
