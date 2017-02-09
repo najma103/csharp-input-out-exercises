@@ -28,10 +28,10 @@ namespace Vend.Classes
             machine = items;
         }
 
-        public string DisplayItems()
-        {
+        //public string DisplayItems()
+        //{
 
-        }
+        //}
         public double FeedMoney()
         {
             Console.Write("Please enter a valid dollar amount (in 0.00 format): ");

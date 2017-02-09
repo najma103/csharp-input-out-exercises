@@ -16,6 +16,9 @@ namespace Vend
             VendingMachineCLI vending = new VendingMachineCLI(vendingMachine);
 
             vending.VendMethod();
+
+            //Change makeChange = new Change();
+            //makeChange.MakeChange();
         }
     }
 }

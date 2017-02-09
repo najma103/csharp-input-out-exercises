@@ -16,13 +16,12 @@ namespace Vend.Classes
                 this.vendingMachine = vendingMachine;
             }
 
-        VendMachine vendMethod = new VendMachine();
         Change balance = new Change();
         double totalBalance = 0.00;
         
         public void VendMethod()
         {
-            totalBalance = vendMethod.getBalance;
+            totalBalance = vendingMachine.getBalance;
             Console.WriteLine($"*************************************************");
             Console.WriteLine($"**************** VENDO-MATIC 500 ****************");
             Console.WriteLine($"*************************************************\n");
@@ -74,7 +73,7 @@ namespace Vend.Classes
             while (true)
             {
                 Console.WriteLine($"********* PLEASE MAKE A SELECTION *********\n");
-                Console.WriteLine($"Current Balance: ${vendMethod.getBalance.ToString("F")} \n");
+                Console.WriteLine($"Current Balance: ${vendingMachine.getBalance.ToString("F")} \n");
                 Console.WriteLine("1) Feed Money");
                 Console.WriteLine("2) Select Product");
                 Console.WriteLine("\n9) Finish Transaction");
@@ -98,7 +97,7 @@ namespace Vend.Classes
                 if (userInput == 1)
                 {
                     Console.WriteLine("You entered 1.\n");
-                    vendMethod.FeedMoney();
+                    vendingMachine.FeedMoney();
                 }
                 else if (userInput == 2)
                 {
