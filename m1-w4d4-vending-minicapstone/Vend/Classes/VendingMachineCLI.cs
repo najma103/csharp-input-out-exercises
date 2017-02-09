@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vend.Classes;
+using System.Runtime.InteropServices;
 
 namespace Vend.Classes
 {
     public class VendingMachineCLI
     {
+
         VendMachine vendMethod = new VendMachine();
         Change balance = new Change();
-        VendMachine tempBalance = new VendMachine();
         double totalBalance = 0.00;
         
-
         public void VendMethod()
         {
             totalBalance = vendMethod.getBalance;
@@ -50,6 +50,7 @@ namespace Vend.Classes
                 }
                 else if(tempInput == 2)
                 {
+                    //vendMethod.DisplayItems();
                     Menu2();
                 }
                 else if (tempInput == 9)

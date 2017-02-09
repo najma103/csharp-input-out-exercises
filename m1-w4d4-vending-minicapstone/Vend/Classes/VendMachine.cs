@@ -9,17 +9,30 @@ namespace Vend.Classes
 {
     public class VendMachine
     {
-        Dictionary<string, VendingMachineItems> machine = new Dictionary<string, VendingMachineItems>();
 
         Change changeBalance = new Change();
         public double balance = 0.00;
-
         public double getBalance
         {
             get { return balance; }
         }
 
+        Dictionary<string, VendingMachineItems> machine = new Dictionary<string, VendingMachineItems>();
 
+        public VendMachine()
+        {
+
+        }
+
+        public VendMachine(Dictionary<string,VendingMachineItems> items)
+        {
+            machine = items;
+        }
+
+        public string DisplayItems()
+        {
+
+        }
         public double FeedMoney()
         {
             Console.Write("Please enter a valid dollar amount (in 0.00 format): ");
