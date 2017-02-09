@@ -9,7 +9,7 @@ namespace Vend.Classes
     public class Change
     {
 
-        public double balance = 0.00;
+        public double balance;
         public double Balance
         {
             get { return balance; }

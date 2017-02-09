@@ -11,10 +11,13 @@ namespace Vend.Classes
     {
         Dictionary<string, VendingMachineItems> machine = new Dictionary<string, VendingMachineItems>();
 
-        Change balance = new Change();
-        //public double balance = 0.00;
+        Change changeBalance = new Change();
+        public double balance = 0.00;
 
-
+        public double getBalance()
+        {
+            return balance;
+        }
 
 
         public double FeedMoney()
@@ -24,7 +27,7 @@ namespace Vend.Classes
             try { 
 
             tempBalance = double.Parse(Console.ReadLine());
-            balance.UpdateBalance(tempBalance);
+                balance += tempBalance;
 
             }
             catch
@@ -33,8 +36,8 @@ namespace Vend.Classes
                 FeedMoney();
             }
 
-            Console.WriteLine($"You added ${tempBalance.ToString("F")} to your account. You now have ${balance.Balance.ToString("F")} available.\n\n");
-            return balance.Balance;
+            Console.WriteLine($"You added ${tempBalance.ToString("F")} to your account. You now have ${balance.ToString("F")} available.\n\n");
+            return balance;
 
         }
     }

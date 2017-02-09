@@ -19,9 +19,11 @@ namespace Vend.Classes
             Console.WriteLine($"*************************************************\n");
 
             while (true)
+
             {
+                double totalBalance = vendMethod.getBalance();
                 Console.WriteLine($"********* PLEASE MAKE A SELECTION *********\n");
-                Console.WriteLine($"Current Balance: ${balance.Balance.ToString("F")} \n");
+                Console.WriteLine($"Current Balance: ${totalBalance.ToString("F")} \n");
                 Console.WriteLine("1) Feed Money");
                 Console.WriteLine("2) Purchase Items");
                 Console.WriteLine("\n9) Exit Menu");
