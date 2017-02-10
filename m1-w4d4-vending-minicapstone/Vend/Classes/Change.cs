@@ -69,7 +69,9 @@ namespace Vend.Classes
 
             Console.WriteLine($"\n\nQuarters: {quarters}\nDimes: {dimes}\nNickels: {nickels}");
             Console.ReadKey();
-            return balance;
+
+
+            return totalBalance;
         }
 
 
