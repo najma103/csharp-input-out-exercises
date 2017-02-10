@@ -11,7 +11,7 @@ namespace Vend.Classes
     {
         static string outputFileDir = Environment.CurrentDirectory;
         static string outputFileName = @"TransactionLog.txt";
-        string filePath = Path.Combine(outputFileDir, outputFileDir);
+        string filePath = Path.Combine(outputFileDir, outputFileName);
 
         VendingMachineFileReader reader = new VendingMachineFileReader();
 
