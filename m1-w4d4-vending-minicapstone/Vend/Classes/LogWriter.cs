@@ -31,6 +31,5 @@ namespace Vend.Classes
             }
             Console.ReadKey();
         }
-
     }
 }
