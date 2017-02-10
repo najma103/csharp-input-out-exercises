@@ -8,20 +8,22 @@ using System.Runtime.InteropServices;
 
 namespace Vend.Classes
 {
-        public class VendingMachineCLI
+    public class VendingMachineCLI
+    {
+        private VendMachine vm = new VendMachine();
+        public VendingMachineCLI(VendMachine vendingMachine)
         {
-            private VendMachine vendingMachine = new VendMachine();
-            public VendingMachineCLI(VendMachine vendingMachine)
-            {
-                this.vendingMachine = vendingMachine;
-            }
+            vm = vendingMachine;
+        }
 
-        Change balance = new Change();
+        LogWriter lw = new LogWriter();
+        SalesReportWriter salesreport = new SalesReportWriter();
+        Change ch = new Change();
         double totalBalance = 0.00;
-        
-        public void VendMethod()
+
+        public void mainMenu()
         {
-            totalBalance = vendingMachine.getBalance;
+            totalBalance = vm.getBalance;
             Console.WriteLine($"*************************************************");
             Console.WriteLine($"**************** VENDO-MATIC 500 ****************");
             Console.WriteLine($"*************************************************\n");
@@ -33,7 +35,7 @@ namespace Vend.Classes
                 Console.WriteLine($"********* MAIN MENU *********\n");
                 Console.WriteLine("1) Display Vending Machine Items");
                 Console.WriteLine("2) Purchase");
-                Console.WriteLine("\n9) Exit Menu");
+                Console.WriteLine("\n9) Exit Program");
                 Console.Write($"\nPlease enter either a 1, 2, or 9: ");
 
                 Int16 tempInput;
@@ -50,15 +52,18 @@ namespace Vend.Classes
 
                 if (tempInput == 1)
                 {
-
+                    vm.displayItems();
                 }
-                else if(tempInput == 2)
+                else if (tempInput == 2)
                 {
-                    //vendMethod.DisplayItems();
+                    vm.displayItems();
                     Menu2();
                 }
                 else if (tempInput == 9)
                 {
+                    double change1 = ch.MakeChange(vm.getBalance);
+                    string msgLog = "Your remaining change is:  $" + change1.ToString("F");
+                    lw.LogWriterMethod(msgLog);
                     break;
                 }
                 else
@@ -73,7 +78,7 @@ namespace Vend.Classes
             while (true)
             {
                 Console.WriteLine($"********* PLEASE MAKE A SELECTION *********\n");
-                Console.WriteLine($"Current Balance: ${vendingMachine.getBalance.ToString("F")} \n");
+                Console.WriteLine($"Current Balance: ${vm.getBalance.ToString("F")} \n");
                 Console.WriteLine("1) Feed Money");
                 Console.WriteLine("2) Select Product");
                 Console.WriteLine("\n9) Finish Transaction");
@@ -97,19 +102,25 @@ namespace Vend.Classes
                 if (userInput == 1)
                 {
                     Console.WriteLine("You entered 1.\n");
-                    vendingMachine.FeedMoney();
+                    vm.FeedMoney();
                 }
                 else if (userInput == 2)
                 {
-                    // purchase items method
+                    // display items available for purchase
+                    vm.displayItems();
+                    vm.selectProduct();
+                    lw.LogWriterMethod(vm.LogFileString);
                 }
                 else if (userInput == 0)
                 {
                     // technician method
+                    salesreport.SaleReportWriterMethod(vm.SalesReportDictionary, vm.TotalPurchased);
                 }
                 else if (userInput == 9)
                 {
-                    // exit loop
+                    //double change1 = ch.MakeChange(vm.getBalance);
+                    //string msgLog = "Your remaining change is: " + change1.ToString();
+                    //lw.LogWriterMethod(msgLog);
                     break;
                 }
                 else
@@ -121,3 +132,4 @@ namespace Vend.Classes
         }
     }
 }
+

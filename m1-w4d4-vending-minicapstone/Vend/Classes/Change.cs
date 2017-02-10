@@ -43,11 +43,9 @@ namespace Vend.Classes
 
         public double totalBalance = 0;
 
-        public double MakeChange()
+        public double MakeChange(double remainingBalance)
         {
-            Console.Write($"Please enter a value: ");
-            string userInput = Console.ReadLine();
-            totalBalance = double.Parse(userInput);
+            totalBalance = remainingBalance;
             totalBalance *= 100;
 
             while (totalBalance >= 25)
@@ -65,15 +63,13 @@ namespace Vend.Classes
                 nickels++;
                 totalBalance -= 5;
             }
-            
-
-            Console.WriteLine($"\n\nQuarters: {quarters}\nDimes: {dimes}\nNickels: {nickels}");
+            Console.WriteLine($"\nYour change is: ");
+            Console.WriteLine($"Quarters: {quarters} Dimes: {dimes} Nickels: {nickels}");
+            Console.WriteLine($"\n************************************************************");
+            Console.WriteLine($"********** PLEASE PRESS ANY KEY TO EXIT PROGRAM **********");
             Console.ReadKey();
-
 
             return totalBalance;
         }
-
-
     }
 }
