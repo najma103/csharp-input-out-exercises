@@ -21,9 +21,11 @@ namespace Vend.Classes
             using (StreamWriter sw = new StreamWriter(filePath, true))
             {
 
+                sw.WriteLine($"\nDateTime Product Slot AmountAccepted ChangeTendered\n");
+
                 foreach (var item in reader.Items)
                 {
-                    sw.WriteLine($"{0},{1}", item.Key, item.Value);
+                    sw.WriteLine($"{item.Key},{item.Value}");
                 }
 
             }
