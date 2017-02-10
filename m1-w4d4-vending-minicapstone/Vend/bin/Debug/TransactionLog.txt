@@ -1,0 +1,19 @@
+
+DateTime Product Slot AmountAccepted ChangeTendered
+
+A1,Vend.Classes.VendingMachineItems
+A2,Vend.Classes.VendingMachineItems
+A3,Vend.Classes.VendingMachineItems
+A4,Vend.Classes.VendingMachineItems
+B1,Vend.Classes.VendingMachineItems
+B2,Vend.Classes.VendingMachineItems
+B3,Vend.Classes.VendingMachineItems
+B4,Vend.Classes.VendingMachineItems
+C1,Vend.Classes.VendingMachineItems
+C2,Vend.Classes.VendingMachineItems
+C3,Vend.Classes.VendingMachineItems
+C4,Vend.Classes.VendingMachineItems
+D1,Vend.Classes.VendingMachineItems
+D2,Vend.Classes.VendingMachineItems
+D3,Vend.Classes.VendingMachineItems
+D4,Vend.Classes.VendingMachineItems
