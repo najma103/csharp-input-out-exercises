@@ -9,15 +9,7 @@ namespace Vend.Classes
 {
     public class VendMachine
     {
-        VendingMachineItems vmi = new VendingMachineItems();
-        //dictionary for sales report
-        private Dictionary<string, int> salesReportDictionary = new Dictionary<string, int>();
-        public Dictionary<string,int> SalesReportDictionary
-        {
-            get { return salesReportDictionary; }
-            set { salesReportDictionary = value; }
-        }
-
+       
         //Change changeBalance = new Change();
         private double totalPurchased = 0.0;
         public double TotalPurchased
@@ -39,7 +31,8 @@ namespace Vend.Classes
         }
         public VendMachine()
         {
-
+            VendingMachineItems vmi = new VendingMachineItems();
+            
         }
 
         private Dictionary<string, VendingMachineItems> vmItems = new Dictionary<string, VendingMachineItems>();
@@ -55,15 +48,24 @@ namespace Vend.Classes
 
         public void displayItems()
         {
-            Console.WriteLine("Slot #\t Desc\t\t Price\t Quantity\t");
+            Console.WriteLine("Slot #\t Desc\t\t Price\t \tQuantity\t");
             foreach (var key in vmItems.Keys)
             {
-                Console.WriteLine("{0}: \t{1}\t ${2}\t {3}", key, VmItems[key].Name.ToString(),
-                    VmItems[key].Price.ToString(), VmItems[key].Quantity.ToString());
+                Console.Write("{0}: \t{1}\t ${2}\t", key, VmItems[key].Name.ToString(),
+                    VmItems[key].Price.ToString() );
+                if (VmItems[key].Quantity == 0)
+                {
+                    Console.Write("\t**SOLD OUT**");
+                }
+                else
+                {
+                    Console.Write("\t"+VmItems[key].Quantity.ToString());
+                }
+                Console.WriteLine();
             }
         }
 
-        public void selectProduct()
+        public void SelectProduct()
         {
 
             Console.WriteLine("Please choose a product");
@@ -81,7 +83,7 @@ namespace Vend.Classes
                 {
                     Console.Write($"SOLD OUT. Please select a different item.\n");
                 }
-                else if (balance < calTotal(price, tempQuantity))
+                else if (balance < CalTotal(price, tempQuantity))
                 {
                     Console.WriteLine($"\nInsufficient funds. Please insert more money to machine.");
                 }
@@ -89,15 +91,12 @@ namespace Vend.Classes
                 {
                     Console.WriteLine("You have purchased " + tempQuantity + " "
                         + VmItems[choice].Name.ToString() + " and your total is: "
-                        + "$" + calTotal(price, tempQuantity).ToString("F"));
+                        + "$" + CalTotal(price, tempQuantity).ToString("F"));
                     UpdateRemainingQuantity(choice, tempQuantity);
-                    UpdateRemainingBalance(calTotal(price, tempQuantity));
+                    UpdateRemainingBalance(CalTotal(price, tempQuantity));
 
                     //build string for logwriter 
                     PrintLogFile(choice, tempQuantity, price);
-
-                    // Add to the Sales report dictionary
-                    PrintSalesReport(choice, tempQuantity, price);
                 }
                 else
                 {
@@ -118,27 +117,10 @@ namespace Vend.Classes
                 + quantity.ToString() + "\t"
                 //+ VmItems[choice].Price.ToString()
                 + VmItems[choice].Price.ToString()
-                + " :: Total purchased  $" + calTotal(price, quantity);
+                + "\t :: Total purchased \t $" + CalTotal(price, quantity);
         }
 
-        public void PrintSalesReport(string choice, int quantity, double price)
-        {
-  
-            foreach (var key in vmItems.Keys)
-            {
-                if (VmItems[key].Quantity == 5)
-                {
-                    SalesReportDictionary[VmItems[choice].Name] = 0;
-                }
-                else
-                {
-                    SalesReportDictionary[VmItems[choice].Name] =  quantity;
-                    UpdateTotalPurchased(calTotal(price, quantity));
-
-                }
-            }
-        }
-        public double calTotal(double price, int quantity)
+        public double CalTotal(double price, int quantity)
         {
             double total = price * quantity;
             return total;
@@ -171,8 +153,9 @@ namespace Vend.Classes
                 Console.WriteLine("Not a valid dollar amount. Use dollar.cents format");
                 FeedMoney();
             }
-
-            Console.WriteLine($"You added ${tempBalance.ToString("F")} to your account. You now have ${balance.ToString("F")} available.\n\n");
+            string msg = $"You added ${tempBalance.ToString("F")} to your account. You now have ${balance.ToString("F")} available.\n\n";
+            
+            Console.WriteLine(msg);
             return balance;
 
         }

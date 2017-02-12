@@ -62,7 +62,8 @@ namespace Vend.Classes
                 else if (tempInput == 9)
                 {
                     double change1 = ch.MakeChange(vm.getBalance);
-                    string msgLog = "Your remaining change is:  $" + change1.ToString("F");
+                    Console.WriteLine("Your remaining change is:  $" + change1.ToString("F"));
+                    string msgLog = "Your remaining change is:  $" + vm.getBalance;
                     lw.LogWriterMethod(msgLog);
                     break;
                 }
@@ -77,6 +78,7 @@ namespace Vend.Classes
         {
             while (true)
             {
+                Console.WriteLine();
                 Console.WriteLine($"********* PLEASE MAKE A SELECTION *********\n");
                 Console.WriteLine($"Current Balance: ${vm.getBalance.ToString("F")} \n");
                 Console.WriteLine("1) Feed Money");
@@ -102,25 +104,26 @@ namespace Vend.Classes
                 if (userInput == 1)
                 {
                     Console.WriteLine("You entered 1.\n");
-                    vm.FeedMoney();
+                    double balance = vm.FeedMoney();
+                    string msg = "You now have " + balance + " in your account. ";
+                    lw.LogWriterMethod(msg);
                 }
                 else if (userInput == 2)
                 {
                     // display items available for purchase
                     vm.displayItems();
-                    vm.selectProduct();
+                    vm.SelectProduct();
                     lw.LogWriterMethod(vm.LogFileString);
                 }
                 else if (userInput == 0)
                 {
                     // technician method
-                    salesreport.SaleReportWriterMethod(vm.SalesReportDictionary, vm.TotalPurchased);
+                    salesreport.SaleReportWriterMethod(vm.VmItems);
+                    Console.WriteLine("Sales Report has been created.\n");
                 }
                 else if (userInput == 9)
                 {
-                    //double change1 = ch.MakeChange(vm.getBalance);
-                    //string msgLog = "Your remaining change is: " + change1.ToString();
-                    //lw.LogWriterMethod(msgLog);
+                    Console.WriteLine("Thank You For Your Purchase! \n");
                     break;
                 }
                 else

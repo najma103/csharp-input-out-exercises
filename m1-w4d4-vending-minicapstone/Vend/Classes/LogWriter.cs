@@ -14,18 +14,22 @@ namespace Vend.Classes
         static string outputFileName = String.Format("{0:yyyy-MM-dd hhmm}__{1}", DateTime.Now, filename);
         string filePath = Path.Combine(outputFileDir, outputFileName);
 
-        VendingMachineFileReader reader = new VendingMachineFileReader();
-
         public void LogWriterMethod(string machineLog)
         {
-
-            using (StreamWriter sw = new StreamWriter(filePath, true))
+            try
             {
+                using (StreamWriter sw = new StreamWriter(filePath, true))
+                {
 
-                sw.WriteLine(machineLog);
+                    sw.WriteLine(machineLog);
 
-   
+                }
             }
+            catch(IOException e)
+            {
+                Console.WriteLine("Error Writing to the file" + e);
+            }
+ 
 
         }
     }
