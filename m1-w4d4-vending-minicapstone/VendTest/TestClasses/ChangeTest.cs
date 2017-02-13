@@ -14,7 +14,7 @@ namespace VendTest.TestClasses
         [TestMethod]
         public void ChangeTestMethod()
         {
-            Change test1 = new Change();               
+            Change test1 = new Change();
 
             double quarters = 10;
 

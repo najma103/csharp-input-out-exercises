@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestClasses\ChangeTest.cs" />
+    <Compile Include="TestClasses\LogWriterTest.cs" />
+    <Compile Include="TestClasses\SalesReportWriterTest.cs" />
     <Compile Include="TestClasses\VendMachineTest.cs" />
     <Compile Include="TestClasses\VendingMachineItemsTest.cs" />
   </ItemGroup>

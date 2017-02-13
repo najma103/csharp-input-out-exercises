@@ -1,41 +1,43 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
+using System.Collections.Generic;
+using System.IO;
+using Vend;
 using Vend.Classes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace VendTest.TestClasses
 {
+
     [TestClass]
     public class VendMachineTest
     {
+        VendingMachineFileReader reader = new VendingMachineFileReader();
+        //VendingMachineItems vmi = new VendingMachineItems();
+        VendMachine vm = new VendMachine();
+        public Dictionary<string, VendingMachineItems> vmItems = new Dictionary<string, VendingMachineItems>();
+
+
+
         [TestMethod]
-        public void DisplayItemTestMethod()
+        public void TestDisplayProduct()
         {
-            VendMachine test1 = new VendMachine();
+            vm.VmItems = reader.Items;
+            vmItems = reader.Items;
+            vm.displayItems();
+            Assert.AreEqual(vmItems, vm.VmItems);
+        }
 
-            //string testoutput = "testoutput";
-            //string displayItems = "";
-
-
-            //Assert.AreEqual(testoutput, test1.displayItems());
+        [TestMethod]
+        public void TestSelectProduct()
+        {
+            vm.VmItems = reader.Items;
+            vmItems = reader.Items;
+            string key = "A1";
+            string actual = "Potato Crisps";
+            string expected = vm.VmItems[key].Name.ToString();
+            CollectionAssert.AllItemsAreUnique(vm.VmItems);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
-
-
-//public void displayItems()
-//{
-//    Console.WriteLine("Slot #\t Desc\t\t Price\t \tQuantity\t");
-//    foreach (var key in vmItems.Keys)
-//    {
-//        Console.Write("{0}: \t{1}\t ${2}\t", key, VmItems[key].Name.ToString(),
-//            VmItems[key].Price.ToString());
-//        if (VmItems[key].Quantity == 0)
-//        {
-//            Console.Write("\t**SOLD OUT**");
-//        }
-//        else
-//        {
-//            Console.Write("\t" + VmItems[key].Quantity.ToString());
-//        }
-//        Console.WriteLine();
-//    }
