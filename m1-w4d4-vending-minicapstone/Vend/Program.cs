@@ -16,13 +16,6 @@ namespace Vend
             VendingMachineCLI vending = new VendingMachineCLI(vendingMachine);
             vending.mainMenu();
 
-
-            //Change makeChange = new Change();
-            //makeChange.MakeChange();
-
-            //LogWriter logWriter = new LogWriter();
-            //logWriter.LogWriterMethod();
-
         }
     }
 }

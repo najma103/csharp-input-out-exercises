@@ -22,7 +22,6 @@ namespace Vend.Classes
             {
                 foreach (KeyValuePair<string, VendingMachineItems> kvp in salesReportDict)
                 {
-                    //sw.WriteLine(kvp.Key + ", " + kvp.Value);
                     string name = kvp.Value.Name.ToString();
                     int quantity = kvp.Value.Quantity;
                     double price = kvp.Value.Price;

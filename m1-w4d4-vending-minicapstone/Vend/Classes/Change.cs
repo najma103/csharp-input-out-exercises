@@ -8,7 +8,7 @@ namespace Vend.Classes
 {
     public class Change
     {
-        VendingMachineItems remainingBalance = new VendingMachineItems();
+       //VendingMachineItems remainingBalance = new VendingMachineItems();
 
         private double quarters = 0;
         private double dimes = 0;
@@ -17,14 +17,17 @@ namespace Vend.Classes
         public double Quarters
         {
             get { return quarters; }
+            set { quarters = value; }
         }
         public double Dimes
         {
             get { return dimes; }
+            set { dimes = value; }
         }
         public double Nickels
         {
             get { return nickels; }
+            set { nickels = value; }
         }
 
         public double balance;

@@ -9,8 +9,7 @@ namespace Vend.Classes
 {
     public class VendMachine
     {
-       
-        //Change changeBalance = new Change();
+
         private double totalPurchased = 0.0;
         public double TotalPurchased
         {
@@ -115,7 +114,6 @@ namespace Vend.Classes
             logFileString = choice + "\t"
                 + VmItems[choice].Name + "\t "
                 + quantity.ToString() + "\t"
-                //+ VmItems[choice].Price.ToString()
                 + VmItems[choice].Price.ToString()
                 + "\t :: Total purchased \t $" + CalTotal(price, quantity);
         }
