@@ -1,6 +1,0 @@
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\bin\Debug\Vend.exe
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\bin\Debug\Vend.pdb
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.exe
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\bin\Debug\Vend.exe.config
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.csprojResolveAssemblyReference.cache
-C:\Users\ajaros\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.pdb
