@@ -17,8 +17,6 @@ namespace VendTest.TestClasses
         VendMachine vm = new VendMachine();
         public Dictionary<string, VendingMachineItems> vmItems = new Dictionary<string, VendingMachineItems>();
 
-
-
         [TestMethod]
         public void TestDisplayProduct()
         {
@@ -38,6 +36,15 @@ namespace VendTest.TestClasses
             string expected = vm.VmItems[key].Name.ToString();
             CollectionAssert.AllItemsAreUnique(vm.VmItems);
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestUpdateBalance()
+        {
+            vm.balance = 40;
+            Assert.AreEqual(40, vm.getBalance);
+            Assert.AreEqual(15, vm.CalTotal(3.0, 5));
+
         }
     }
 }
