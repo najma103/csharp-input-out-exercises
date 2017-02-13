@@ -17,7 +17,6 @@ namespace Vend.Classes
         public double Quarters
         {
             get { return quarters; }
-
         }
         public double Dimes
         {
@@ -27,7 +26,6 @@ namespace Vend.Classes
         {
             get { return nickels; }
         }
-
 
         public double balance;
         public double Balance

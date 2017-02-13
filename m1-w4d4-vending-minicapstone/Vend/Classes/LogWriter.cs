@@ -20,17 +20,13 @@ namespace Vend.Classes
             {
                 using (StreamWriter sw = new StreamWriter(filePath, true))
                 {
-
                     sw.WriteLine(machineLog);
-
                 }
             }
             catch(IOException e)
             {
                 Console.WriteLine("Error Writing to the file" + e);
             }
- 
-
         }
     }
 }

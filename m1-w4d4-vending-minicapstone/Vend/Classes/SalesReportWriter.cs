@@ -14,7 +14,6 @@ namespace Vend.Classes
         static string outputFileName = String.Format("{0:yyyy-MM-dd hhmm}__{1}", DateTime.Now, filename);
         string filePath = Path.Combine(outputFileDir, outputFileName);
 
-
         public void SaleReportWriterMethod(Dictionary<string, VendingMachineItems> salesReportDict)
         {
             double totalSales = 0.0;
@@ -38,14 +37,11 @@ namespace Vend.Classes
                         totalSales += quantity * price;
                         sw.WriteLine(name + ", " + quantity);
                     }
-                   
                 }
                 sw.WriteLine();
                 sw.WriteLine("Total Sales: " + "," + "$" + totalSales);
 
-
             }
-
         }
     }
 }

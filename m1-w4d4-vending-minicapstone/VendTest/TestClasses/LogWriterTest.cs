@@ -1,16 +1,14 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Vend.Classes;
 
 namespace VendTest.TestClasses
 {
     [TestClass]
-    public class VendingMachineItemsTest
+    public class UnitTest1
     {
         [TestMethod]
         public void TestMethod1()
         {
-            // no methods in VMI class
         }
     }
 }

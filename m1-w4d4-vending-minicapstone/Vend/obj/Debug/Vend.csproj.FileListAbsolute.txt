@@ -15,3 +15,4 @@ C:\Users\Machine One\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapst
 C:\Users\Machine One\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\bin\Debug\Vend.pdb
 C:\Users\Machine One\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.exe
 C:\Users\Machine One\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.pdb
+C:\Users\Machine One\week4team4-c-week4-pair-exercises\m1-w4d4-vending-minicapstone\Vend\obj\Debug\Vend.csprojResolveAssemblyReference.cache
